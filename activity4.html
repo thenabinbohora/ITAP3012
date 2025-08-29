@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Information Form</title>
+</head>
+<body>
+<form>
+    <fieldset>
+        <legend>Customer Info</legend>
+        <label for="name" >Name:</label>
+        <input type="text" id="name" name="name" maxlength="50" placeholder="Name">
+        <br><br>
+        <label for="telephone">Telephone:</label>
+        <input type="tel" id="telephone" name="telephone" pattern="[0-9]{10}" placeholder="0423456789">
+        <br><br>
+        <label for="email">E-mail address:</label>
+        <input type="email" id="email" name="email" maxlength="50" placeholder="Email">
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Books</legend>
+        <label for="book">Select Book:</label>
+        <select id="book" name="book">
+            <option value="html5">HTML5 Canvas by Steve Fulton & Jeff Fulton</option>
+            <option value="java">Java Software Solutions by Lewis & Loftus</option>
+            <option value="python">Learning Python by Mark Lutz</option>
+            <option value="web">Web Development with HTML & CSS by Jon Duckett</option>
+        </select>
+        <label for="quantity">Quantity (Maximum 5):</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="5" value="1">
+    </fieldset>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
