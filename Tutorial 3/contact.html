@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="fee.html">Fees</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Contact Us</h1>
+  </header>
+
+  <main>
+    <form>
+      <fieldset>
+            <legend>Your Details</legend>
+            <label for="name">Full Name:</label><br>
+            <input type="text" id="name" name="name" required>
+            <br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required>
+      </fieldset>
+
+      <fieldset>
+            <legend>Your Message</legend>
+            <label for="subject">Subject:</label><br>
+            <input type="text" id="subject" name="subject" required>
+            <br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="6" required></textarea>
+      </fieldset>
+
+      <p>
+        <button type="submit">Send Message</button>
+        <button type="reset">Clear</button>
+      </p>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; Nabin</p>
+  </footer>
+</body>
+</html>

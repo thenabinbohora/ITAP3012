@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Activity 4</title>
+</head>
+<body>
+  <h2>Enter something here</h2>
+  <input type="text" id="input1" onmouseover="mouseoverevent()" onmouseout="mouseoutevent()" />
+  <script>
+    // This function changes background when mouse hovers over input field
+    function mouseoverevent() {
+      document.getElementById("input1").style.background = "aqua";
+    }
+
+    // This function resets background when mouse leaves the field
+    function mouseoutevent() {
+      document.getElementById("input1").style.background = "white";
+    }
+  </script>
+</body>
+</html>

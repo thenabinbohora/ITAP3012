@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Activity 3</title>
+  <script type="text/javascript">
+    function validateLogin() {
+      // Getting values
+      var username = document.f1.username.value.trim();
+      var password = document.f1.password.value;
+      // Correct username and password
+      var validUsername = "nabin";
+      var validPassword = "helloworld";
+      // Validating username and password
+      if (username === "" || password === "") {
+        alert("Username and password cannot be empty!");
+        return false; 
+      }
+      // Check if provided details match the correct details
+      if (username === validUsername && password === validPassword) {
+        alert("Login successful! Welcome, " + username);
+        return true;
+      } else {
+        alert("Invalid username or password. Try again.");
+        return false; 
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>Login Form</h2>
+  <form name="f1" action="#" onsubmit="return validateLogin()">
+    Username: <input type="text" name="username"><br/><br/>
+    Password: <input type="password" name="password"><br/><br/>
+    <input type="submit" value="Login">
+  </form>
+</body>
+</html>
