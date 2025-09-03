@@ -17,10 +17,10 @@
     
     <script>
     $(document).ready(function() {
-
-      /* Your code goes here */
-
-      
+     $("#button_change").on("click", () => {
+        let color = $("#input_color").val();
+        $(".cow_color").text(color);
+    });
     });
     </script>
   </head>

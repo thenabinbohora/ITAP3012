@@ -31,10 +31,77 @@
       }
 
       /* Step 2: Your CSS code goes here */
+
+      .selectable-options .ui-widget-content {
+        padding: 5px;
+        margin: 2px;
+        border: 1px solid #ddd;
+      }
+
+      .selectable-options .ui-selected { 
+        background: #F39814; 
+        color: white; 
+      }
+
+      .selectable-options input[type="radio"] {
+        display: none;
+      }
+
+      .selectable-options label {
+        display: block;
+        padding: 5px;
+        cursor: pointer;
+      }
       
       /* Step 3: Your CSS code goes here */
 
+      .color-item {
+        padding: 5px;
+        margin: 2px;
+        border: 1px solid #ddd;
+        background: #f9f9f9;
+        cursor: move;
+      }
+
+      .rank_color {
+          width: 20px;
+          margin-top: 2px;
+          text-align: center;
+          cursor: move;
+      }
+
+      .rank_color::before {
+          content: "↕";
+          color: #666;
+          font-size: 16px;
+      }
+
+      .rank_color {
+          color: transparent;
+          background: transparent;
+          border: none;
+      }
+
+      .rank_color.sorted {
+          color: black;
+      } 
       /* Step 4: Your CSS code goes here */
+      .ui-tooltip {
+        padding: 8px;
+        max-width: 300px;
+        background: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      
+      .color-swatch {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-left: 5px;
+        vertical-align: middle;
+      
+      }
       
     </style>
     
@@ -42,12 +109,42 @@
     $(document).ready(function() {
 
       /* Step 1: Your js code goes here */
+      $("#date").datepicker();
 
       /* Step 2: Your js code goes here */
 
+      $(".selectable-options").selectable({
+        filter: ".ui-widget-content",
+        selected: function(event, ui) {
+          $(ui.selected).find('input[type="radio"]').prop('checked', true);
+          $(ui.selected).siblings().removeClass('ui-selected');
+        }
+      });
+
       /* Step 3: Your js code goes here */
 
+      $("#color_input").sortable({
+        items: ".color-item",
+        update: function(event, ui) {
+            $(this).find('.rank_color').each(function(index) {
+              $(this).val(index + 1);
+              $(this).addClass('sorted')
+            });
+        }
+      });
+
       /* Step 4: Your js code goes here */
+      $("#ugrad").tooltip({
+        content: "Taking 6.813, doesn't have to do RS assignments"
+      });
+      $("#grad").tooltip({
+        content: "Taking 6.831, required to do RS assignments"
+      });
+      $(".color-item").tooltip({
+        content: function() {
+            return "Click and drag to reorder. Color: " + $(this).find('label').text();
+        }
+      });
 
     });
     </script>
@@ -64,35 +161,52 @@
       <input type="text" id="date" />
     </div>
     <div id="year_input">
-	<h3>Are you enrolled as an undergraduate or a graduate?</h3>
-      <input type="radio" name="enroll_year" id="ugrad" value="ugrad"> 
-      <label for="ugrad">Undergraduate (taking 6.813, doesn't have to do RS assignments)</label>
-      <input type="radio" name="enroll_year" id="grad" value="grad"> 
-      <label for="grad">Graduate (taking 6.831, required to do RS assignments)</label>
-
-      <!-- Step 2: Your HTML here -->
+      <h3>Are you enrolled as an undergraduate or a graduate?</h3>
+      <div class="selectable-options">
+          <div class="ui-widget-content">
+              <input type="radio" name="enroll_year" id="ugrad" value="ugrad"> 
+              <label for="ugrad">Undergraduate (taking 6.813, doesn't have to do RS assignments)</label>
+          </div>
+          <div class="ui-widget-content">
+              <input type="radio" name="enroll_year" id="grad" value="grad"> 
+              <label for="grad">Graduate (taking 6.831, required to do RS assignments)</label>
+          </div>
+      </div>
     </div>
 
     <div id="color_input">
-      <!-- Comment out instruction when you finish step 3 -->
-      <h3>Rank the colors listed from your most favorite (1) to your least favorite (5). Be sure to only use each ranking once.</h3>
-      
-      <input type="text" class="rank_color" id="red" />
-      <label for="red">#ff0000</label><br/>
-      <input type="text" class="rank_color" id="blue" />
-      <label for="blue">#0000ff</label><br/>
-      <input type="text" class="rank_color" id="hot_pink" />
-      <label for="hot_pink">#ff00b3</label><br/>
-      <input type="text" class="rank_color" id="mustard" />
-      <label for="mustard">#ded447</label><br/>
-      <input type="text" class="rank_color" id="dark_green" />
-      <label for="dark_green">#125e18</label><br/>
-
-      <!-- Step 3: Your HTML here -->
-      <!-- Uncomment instruction when you finish step 3 -->
-      <!--<h3>Rank the colors listed from your most favorite to your least favorite:</h3>-->
-      
+    <h3>Rank the colors listed from your most favorite to your least favorite:</h3>
+    
+    <div class="color-item">
+        <input type="text" class="rank_color" id="red" value=""/>
+        <label for="red">#ff0000</label>
+        <span class="color-swatch" style="background: #ff0000;"></span>
     </div>
+    
+    <div class="color-item">
+        <input type="text" class="rank_color" id="blue"/>
+        <label for="blue">#0000ff</label>
+        <span class="color-swatch" style="background: #0000ff;"></span>
+    </div>
+    
+    <div class="color-item">
+        <input type="text" class="rank_color" id="hot_pink"/>
+        <label for="hot_pink">#ff00b3</label>
+        <span class="color-swatch" style="background: #ff00b3;"></span>
+    </div>
+    
+    <div class="color-item">
+        <input type="text" class="rank_color" id="mustard"/>
+        <label for="mustard">#ded447</label>
+        <span class="color-swatch" style="background: #ded447;"></span>
+    </div>
+    
+    <div class="color-item">
+        <input type="text" class="rank_color" id="dark_green"/>
+        <label for="dark_green">#125e18</label>
+        <span class="color-swatch" style="background: #125e18;"></span>
+    </div>
+</div>
 
   </body>
 </html>
