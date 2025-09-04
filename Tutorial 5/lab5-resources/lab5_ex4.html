@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Activity 4</title>
+    <script type="text/javascript" src="jquery/js/jquery-1.9.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("#div1").load("demo_text.txt");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="div1"><h2>Let JQuery and AJAX change this text.</h2></div>
+    <button>Get External Content</button>
+</body>
+</html>
