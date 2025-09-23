@@ -1,0 +1,13 @@
+{
+  "name": "ITAP3012",
+  "dockerComposeFile": ["../docker-compose.yml"],
+  "service": "web",
+  "workspaceFolder": "/workspaces/ITAP3012",
+  "forwardPorts": [8080, 3306, 8081],
+  "portsAttributes": {
+    "8080": { "label": "Apache (PHP)" },
+    "8081": { "label": "phpMyAdmin" },
+    "3306": { "label": "MariaDB" }
+  },
+  "postCreateCommand": "bash /workspaces/ITAP3012/docker/web/post-create.sh"
+}
