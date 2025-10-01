@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="common.css"?>
+<ARTICLE>
+    <HEADLINE>XML and Web Services</HEADLINE>
+    <AUTHOR>Nabin Bohora</AUTHOR>
+    <PARA>
+        One key benefit of XML data is that as plain text, it can be read and transferred between applications and different operating systems. XML is used on the web server to communicate asynchronously with the browser. It is used as a data interchange format for moving information between systems.
+        <INSTRUMENT>XML</INSTRUMENT>
+    </PARA>
+    <PARA>
+        A Web Service is a standards-based, language-agnostic software entity, that accepts specially formatted requests from other software entities on remote machines via vendor and transport neutral communication protocols, producing application specific responses.
+        <INSTRUMENT>Web Services</INSTRUMENT>
+    </PARA>
+    <PARA>
+        Restful Web Services is a lightweight, maintainable, and scalable service that is built on the REST architecture. Restful Web Service, expose API from your application in a secure, uniform, stateless manner to the calling client. The underlying protocol for REST is HTTP. REST stands for REpresentational State Transfer.
+        <INSTRUMENT>Restful Web Services</INSTRUMENT>
+    </PARA>
+</ARTICLE>
+

@@ -1,0 +1,18 @@
+ARTICLE {
+  font-family: serif;
+  display: block;
+}
+
+HEADLINE, AUTHOR, PARA {
+  display: block;
+  margin: 0.5em;
+}
+
+PARA {
+  text-indent: 1em;
+}
+
+INSTRUMENT {
+  display: inline;
+  font-style: italic;
+}
