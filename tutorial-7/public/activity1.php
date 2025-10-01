@@ -5,32 +5,28 @@
 </head>
 <body>
 <?php
-// Database settings
-$servername = "db";   // service name from docker-compose.yml
+$servername = "db"; 
 $username   = "root";
 $password   = "rootpass";
-$database   = "itap_t7"; // make sure this DB exists (created in init script)
-
-// ---------------- MySQLi Connection ----------------
-echo "<h2>MySQLi Connection</h2>";
+$database   = "itap_t7"; 
+// Creating Connection with MySQLi
+echo "<h3>MySQLi Connection</h3>";
 $conn = new mysqli($servername, $username, $password, $database);
-
-// Check connection
+// Checking connection
 if ($conn->connect_error) {
-    die("MySQLi connection failed: " . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
-echo "✅ Connected successfully with MySQLi<br>";
+echo "Connected successfully <br>";
 $conn->close();
-
-// ---------------- PDO Connection ----------------
-echo "<h2>PDO Connection</h2>";
+// Creating Connection with PDO
+echo "<h3>PDO Connection</h3>";
 try {
     $dsn = "mysql:host=$servername;dbname=$database;charset=utf8mb4";
     $pdo = new PDO($dsn, $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "✅ Connected successfully with PDO<br>";
+    echo "Connected successfully <br>";
 } catch (PDOException $e) {
-    echo "❌ Connection failed with PDO: " . $e->getMessage();
+    echo "Connection failed " . $e->getMessage();
 }
 ?>
 </body>

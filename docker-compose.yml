@@ -6,14 +6,14 @@ services:
     container_name: itap3012-web
     volumes:
       - ./:/workspaces/ITAP3012:cached
-      - ./tutorial-7/public:/var/www/html
+      - ./tutorial-10/public:/var/www/html
       - ./docker/web/apache/sites-enabled:/etc/apache2/sites-enabled
     ports:
       - "8080:80"
     depends_on:
       - db
     environment:
-      APACHE_DOCUMENT_ROOT: /workspaces/ITAP3012/tutorial-6/public
+      APACHE_DOCUMENT_ROOT: /workspaces/ITAP3012/tutorial-8/public
       PHP_MEMORY_LIMIT: 512M
 
   db:

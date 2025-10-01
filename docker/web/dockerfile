@@ -1,9 +1,7 @@
 FROM php:8.2-apache
 
-RUN apt-get update && apt-get install -y \
-    libicu-dev libzip-dev libpng-dev libonig-dev libxml2-dev zip unzip git \
- && docker-php-ext-install pdo pdo_mysql intl zip gd mbstring xml \
- && a2enmod rewrite headers
+# Install mysqli and PDO MySQL extensions
+RUN docker-php-ext-install mysqli pdo pdo_mysql
 
-ARG APACHE_DOCUMENT_ROOT=/var/www/html
-ENV APACHE_DOCUMENT_ROOT=${APACHE_DOCUMENT_ROOT}
+# Enable Apache modules you might need
+RUN a2enmod rewrite
