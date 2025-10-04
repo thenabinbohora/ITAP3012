@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Activity 5</title>
+</head>
+<body>
+<script>
+// JSON string
+var jsonStr = '{"artist": {"name":"Manet","nationality":"France"}}';
+
+// Parsing JSON string into a JavaScript object
+var data = JSON.parse(jsonStr);
+
+// Accessing values
+document.write("Artist Name: " + data.artist.name + "<br>");
+document.write("Nationality: " + data.artist.nationality + "<br>");
+</script>
+</body>
+</html>

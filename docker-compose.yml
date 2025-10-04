@@ -5,7 +5,6 @@ services:
       dockerfile: Dockerfile
     container_name: itap3012-web
     volumes:
-      - ./:/workspaces/ITAP3012:cached
       - ./tutorial-10/public:/var/www/html
       - ./docker/web/apache/sites-enabled:/etc/apache2/sites-enabled
     ports:
@@ -13,7 +12,7 @@ services:
     depends_on:
       - db
     environment:
-      APACHE_DOCUMENT_ROOT: /workspaces/ITAP3012/tutorial-8/public
+      APACHE_DOCUMENT_ROOT: /var/www/html
       PHP_MEMORY_LIMIT: 512M
 
   db:

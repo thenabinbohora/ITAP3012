@@ -1,20 +1,38 @@
 <script>
-if(window.XMLHttpRequest) {
-    var xmlhttp = new XMLHttpRequest();
-} else {
-    var xmlhttp = new XMLHttpRequest();
-}
-xmlhttp.open("GeT","art.xml",false);
-xmlhttp.send();
-var xmlDoc = xmlhttp.responseXML;
-var paintings = xmlDoc.getElementsByTagName("painting");
-if(paintings) {
-    for (var i = 0; i<paintings.length; i++) {
-        alert("id = " + paintings[i].getAttribute("id"));
-        var title = paintings[i].getElementsByTagName("title");
-        if(title) {
-            alert("title = " + title[0].textContent);
+    // Checking if the browser supports the XMLHttpRequest object
+    if (window.XMLHttpRequest) {
+        var xmlhttp = new XMLHttpRequest();   // Creating a new XMLHttpRequest object
+    } else {
+        var xmlhttp = new XMLHttpRequest();   // Fallback request
+    }
+
+    // Initializing the request with 'Get' method, art.xml is the file to load, and false means synchronous
+    xmlhttp.open("GET", "art.xml", false);
+
+    // Sending the request to the server
+    xmlhttp.send();
+
+    // Storing the response as an XML document object for parsing
+    var xmlDoc = xmlhttp.responseXML;
+
+    // Getting all <painting> elements from the XML document
+    var paintings = xmlDoc.getElementsByTagName("painting");
+
+    // Checking if the paintings node list exists
+    if (paintings) {
+        // Looping through each <painting> element
+        for (var i = 0; i < paintings.length; i++) {
+
+            // Displaying an alert showing the value of the "id" attribute of the current <painting>
+            alert("id = " + paintings[i].getAttribute("id"));
+
+            // Getting all <title> elements inside the current <painting>
+            var title = paintings[i].getElementsByTagName("title");
+
+            // If a title exists, display the text content of the first <title> element
+            if (title) {
+                alert("title = " + title[0].textContent);
+            }
         }
     }
-}
- </script>
+</script>
