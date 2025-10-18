@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 VIT TechHUB - Online Electronics Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>2024 VIT TechHUB</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#products" class="nav-link">Products</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Welcome to 2024 VIT TechHUB</h2>
+                <p>Your one-stop destination for the latest technology products</p>
+                <button class="cta-button" onclick="scrollToProducts()">Shop Now</button>
+            </div>
+        </section>
+
+        <section id="products" class="products">
+            <div class="container">
+                <h2>Featured Products</h2>
+                <div class="product-filter">
+                    <button class="filter-btn active" onclick="filterProducts('all')">All</button>
+                    <button class="filter-btn" onclick="filterProducts('laptops')">Laptops</button>
+                    <button class="filter-btn" onclick="filterProducts('phones')">Phones</button>
+                    <button class="filter-btn" onclick="filterProducts('accessories')">Accessories</button>
+                </div>
+                
+                <div class="product-grid">
+                    <article class="product-card" data-category="laptops">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&h=400&fit=crop&q=80" alt="MacBook Pro">
+                        </div>
+                        <div class="product-info">
+                            <h3>MacBook Pro 16"</h3>
+                            <p>Powerful laptop for professionals with M2 chip</p>
+                            <div class="price">$2,499.99</div>
+                            <button class="add-to-cart" onclick="addToCart('MacBook Pro')">Add to Cart</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="phones">
+                        <div class="product-image">
+                            <img src="https://i.pinimg.com/736x/cb/2a/d0/cb2ad0bbc24149758f88797d22b54ab7.jpg" alt="iPhone 15">
+                        </div>
+                        <div class="product-info">
+                            <h3>iPhone 15 Pro</h3>
+                            <p>Latest iPhone with advanced camera system</p>
+                            <div class="price">$999.99</div>
+                            <button class="add-to-cart" onclick="addToCart('iPhone 15 Pro')">Add to Cart</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="laptops">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=600&h=400&fit=crop&q=80" alt="Dell XPS">
+                        </div>
+                        <div class="product-info">
+                            <h3>Dell XPS 13</h3>
+                            <p>Ultrabook with stunning 4K display</p>
+                            <div class="price">$1,299.99</div>
+                            <button class="add-to-cart" onclick="addToCart('Dell XPS 13')">Add to Cart</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="accessories">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=400&fit=crop&q=80" alt="Wireless Headphones">
+                        </div>
+                        <div class="product-info">
+                            <h3>Wireless Headphones</h3>
+                            <p>Premium noise-canceling headphones</p>
+                            <div class="price">$299.99</div>
+                            <button class="add-to-cart" onclick="addToCart('Wireless Headphones')">Add to Cart</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="phones">
+                        <div class="product-image">
+                            <img src="https://i.pinimg.com/736x/50/a1/af/50a1af3159848f63ccfd1056f0d2616b.jpg" alt="Samsung Galaxy">
+                        </div>
+                        <div class="product-info">
+                            <h3>Samsung Galaxy S24</h3>
+                            <p>Android flagship with AI features</p>
+                            <div class="price">$899.99</div>
+                            <button class="add-to-cart" onclick="addToCart('Samsung Galaxy S24')">Add to Cart</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="accessories">
+                        <div class="product-image">
+                            <img src="https://i.pinimg.com/originals/23/aa/02/23aa0275ccd57d2db562a0db72a686a4.jpg" alt="Smart Watch">
+                        </div>
+                        <div class="product-info">
+                            <h3>Apple Watch Series 9</h3>
+                            <p>Advanced health and fitness tracking</p>
+                            <div class="price">$399.99</div>
+                            <button class="add-to-cart" onclick="addToCart('Apple Watch Series 9')">Add to Cart</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="accessories">
+                        <div class="product-image">
+                            <img src="https://www.jbhifi.com.au/cdn/shop/files/640894-Product-0-I-638205755418428684_2025ddda-5df8-449f-9856-deafb59018cd.jpg?v=1721103794" alt="Gaming Mouse">
+                        </div>
+                        <div class="product-info">
+                            <h3>Gaming Mouse Pro</h3>
+                            <p>High-precision gaming mouse with RGB lighting</p>
+                            <div class="price">$89.99</div>
+                            <button class="add-to-cart" onclick="addToCart('Gaming Mouse Pro')">Add to Cart</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="laptops">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=600&h=400&fit=crop&q=80" alt="Gaming Laptop">
+                        </div>
+                        <div class="product-info">
+                            <h3>Gaming Laptop RTX 4080</h3>
+                            <p>High-performance gaming laptop with RTX graphics</p>
+                            <div class="price">$2,199.99</div>
+                            <button class="add-to-cart" onclick="addToCart('Gaming Laptop RTX 4080')">Add to Cart</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About 2024 VIT TechHUB</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>VIT TechHUB is your one-stop destination for the latest technology products. We offer a carefully curated selection of electronics, gadgets, and accessories from top brands worldwide.</p>
+                        <p>Our mission is to make cutting-edge technology accessible to everyone, with competitive prices and exceptional customer service.</p>
+                        <ul class="features">
+                            <li>✓ Free shipping on orders over $100</li>
+                            <li>✓ 30-day return policy</li>
+                            <li>✓ 24/7 customer support</li>
+                            <li>✓ Warranty on all products</li>
+                        </ul>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=500&h=400&fit=crop" alt="TechStore">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <div class="contact-item">
+                            <strong>Email:</strong> info@vithub.com.au
+                        </div>
+                        <div class="contact-item">
+                            <strong>Phone:</strong> 1300 171 755
+                        </div>
+                        <div class="contact-item">
+                            <strong>Address:</strong> 157/161 Gloucester St, The Rocks NSW 2000
+                        </div>
+                    </div>
+                    <form class="contact-form" id="contactForm">
+                        <h3>Send us a Message</h3>
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                            <span class="error-message" id="nameError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <span class="error-message" id="messageError"></span>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>2024 VIT TechHUB</h3>
+                    <p>Your ultimate destination for technology products.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://facebook.com" class="social-link" target="_blank">Facebook</a>
+                        <a href="https://twitter.com" class="social-link" target="_blank">Twitter</a>
+                        <a href="https://instagram.com" class="social-link" target="_blank">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 VIT TechHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
